@@ -1,0 +1,23 @@
+.selection{
+    float:left;
+    margin:10px;
+}
+.img-preview-container{
+    background-color: #f7f7f7;
+    position:relative;
+}
+.message{
+    color:black;
+    font-size: larger;
+}
+.button{
+    color:black;
+    margin:10px;
+    float:left;
+    font-size: 16px;
+}
+.img-preview{
+    background: center center no-repeat;
+    height: 200px;
+    width: 200px;
+}

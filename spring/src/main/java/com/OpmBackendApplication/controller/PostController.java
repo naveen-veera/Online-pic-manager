@@ -1,9 +1,15 @@
 package com.OpmBackendApplication.controller;
 
 import lombok.AllArgsConstructor;
+
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.InputStreamResource;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import io.jsonwebtoken.io.IOException;
 
 import java.util.List;
 
@@ -45,4 +51,5 @@ public class PostController {
     public ResponseEntity<List<PostResponse>> getPostsByUsername(@PathVariable String name) {
         return status(HttpStatus.OK).body(postService.getPostsByUsername(name));
     }
+
 }

@@ -1,5 +1,11 @@
 package com.OpmBackendApplication.config;
 
+import java.nio.file.AccessDeniedException;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import com.OpmBackendApplication.security.JwtAuthenticationFilter;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +25,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
+import io.jsonwebtoken.io.IOException;
 import lombok.AllArgsConstructor;
 
 @EnableWebSecurity
@@ -35,7 +42,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         return super.authenticationManagerBean();
     }
     
-
     @Override
     public void configure(HttpSecurity httpSecurity) throws Exception {
         httpSecurity.cors().and()
@@ -46,6 +52,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers(HttpMethod.GET, "/api/subreddit")
                 .permitAll()
                 .antMatchers(HttpMethod.GET, "/api/posts/")
+                .permitAll()
+                .antMatchers(HttpMethod.POST, "/api/image/upload-image")
+                .permitAll()
+                .antMatchers(HttpMethod.GET, "/api/image/upload-image")
+                .permitAll()
+                .antMatchers(HttpMethod.POST, "/api/image/display-image/*")
+                .permitAll()
+                .antMatchers(HttpMethod.GET, "/api/image/display-image/*")
                 .permitAll()
                 .antMatchers(HttpMethod.GET, "/api/posts/**")
                 .permitAll()
@@ -58,18 +72,21 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .permitAll()
                 .anyRequest()
                 .authenticated();
+                
                 // .and().sessionManagement()
                 // .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
         httpSecurity.addFilterBefore(jwtAuthenticationFilter,
                 UsernamePasswordAuthenticationFilter.class);
+                
     }
+
 
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder authenticationManagerBuilder) throws Exception {
         authenticationManagerBuilder.userDetailsService(userDetailsService)
                 .passwordEncoder(passwordEncoder());
     }
-
+    
     @Bean
     PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();

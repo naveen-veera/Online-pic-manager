@@ -1,0 +1,25 @@
+<!-- <div class="displaySection">
+    <ng-template [ngIf]="imageTypeShow">
+        <ng-template [ngIf]="imageToShow.photo">
+            <img [src]="imageToShow.photo" class="img-thumbnail" *ngIf="!isImageLoading;">
+        </ng-template>
+    </ng-template>
+</div>
+<img ng-src="{{'data:image/png;base64,'+root.image_table.picByte}}" > -->
+<div class="container row">
+    <div class="col-md-6">
+        <input type="text" class="form-control" id="name" placeholder="image name" [(ngModel)]="imageName"
+            name="name" />
+    </div>
+    <div class="col-md-6">
+        <input type="button" (click)="getImage()" value="Get Image">
+    </div>
+</div>
+
+<div class="container row">
+    <div class="col-md-12">
+        <div *ngIf=retrievedImage>
+            <img [src]="retrievedImage">
+        </div>
+    </div>
+</div>

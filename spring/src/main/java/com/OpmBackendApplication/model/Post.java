@@ -26,6 +26,12 @@ public class Post {
     private Long postId;
     @NotBlank(message = "Post Name cannot be empty or Null")
     private String postName;
+    
+    @OneToOne(fetch = FetchType.LAZY,
+    cascade =  CascadeType.ALL,
+    mappedBy = "post")
+    private Image image_table;
+    
     @Nullable
     private String url;
     @Nullable
@@ -38,7 +44,12 @@ public class Post {
     private Instant createdDate;
     @ManyToOne(fetch = LAZY)
     @JoinColumn(name = "id", referencedColumnName = "id")
-    private Subreddit subreddit;
-    private Blob image;
+    private Subreddit subreddit; 
     
+    public Image getImage(){
+        return image_table;
+    }
+    public void setImage(Image image_table){
+        this.image_table=image_table;
+    }
 }

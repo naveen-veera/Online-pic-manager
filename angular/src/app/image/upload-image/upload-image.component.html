@@ -1,0 +1,31 @@
+<br>
+<div class="container row">
+    <div class="col-md-6">
+        <input type="file" (change)="onFileChanged($event)">
+
+    </div>
+    <div class="col-md-6">
+        <input type="button" (click)="onUpload()" value="Upload Image">
+    </div>
+</div>
+<hr />
+<div class="container row">
+    <div class="col-md-12">
+        <div *ngIf=message>{{message}}</div>
+    </div>
+</div>
+<!-- <form enctype="multipart/form-data" (ngSubmit)="onUpload()" method="post">
+    <input type="file" class="selection" (change)="onFileChanged($event)" accept="image/*" >
+    <div class="button">
+        <input type="button" value="Upload Photo">
+    </div>
+    <div class="message">
+        hello
+        <div *ngIf=message>{{message}}</div>
+    </div>  
+</form> -->
+<!-- <div *ngIf="selectedFile" class="img-preview-container">
+    <div class="img-preview" 
+        [ngStyle]="{'background-image': 'url('+ selectedFile + ')'}">
+    </div>
+</div> -->
