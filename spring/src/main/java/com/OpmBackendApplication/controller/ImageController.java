@@ -32,7 +32,7 @@ import com.OpmBackendApplication.repository.ImageRepository;
 import com.OpmBackendApplication.model.Image;
 
 @RestController
-@CrossOrigin (origins = "http://localhost:4200")
+@CrossOrigin (origins = "http://localhost:8081")
 @Component
 @AllArgsConstructor
 @RequestMapping("/api/image/")

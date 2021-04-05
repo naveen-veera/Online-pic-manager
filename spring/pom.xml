@@ -167,9 +167,9 @@
             <artifactId>jackson-core</artifactId>
             <version>2.12.2</version>
         </dependency>
-        <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <!-- <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
             <property name="maxUploadSize" value="100000000"/>
-        </bean>
+        </bean> -->
 
     </dependencies>
 

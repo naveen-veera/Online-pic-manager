@@ -9,8 +9,8 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2021-04-01T13:58:48+0530",
-    comments = "version: 1.3.1.Final, compiler: javac, environment: Java 15.0.1 (Oracle Corporation)"
+    date = "2021-04-05T11:18:17+0000",
+    comments = "version: 1.3.1.Final, compiler: javac, environment: Java 11.0.9.1 (Debian)"
 )
 @Component
 public class SubredditMapperImpl implements SubredditMapper {

@@ -30,7 +30,7 @@ import io.jsonwebtoken.io.IOException;
 // @ComponentScan(basePackages= {"com.OpmBackendApplication.controller"})
 @ComponentScan
 @Component
-@CrossOrigin (origins = "http://localhost:4200")
+@CrossOrigin (origins = "http://localhost:8081")
 public class OpmBackend {
     public static void main(String[] args) {
         SpringApplication.run(com.OpmBackendApplication.OpmBackend.class, args);

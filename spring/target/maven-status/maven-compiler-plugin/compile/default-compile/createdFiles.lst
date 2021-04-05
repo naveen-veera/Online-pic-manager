@@ -1,1 +1,5 @@
-com\OpmBackendApplication\mapper\CommentsMapperImpl.class
+com/OpmBackendApplication/repository/ImageRepository.class
+com/OpmBackendApplication/model/Image$ImageBuilder.class
+com/OpmBackendApplication/mapper/CommentsMapperImpl.class
+com/OpmBackendApplication/model/Image.class
+com/OpmBackendApplication/controller/ImageController.class

@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import com.OpmBackendApplication.model.Image;
 
 @Component
-@CrossOrigin (origins = "http://localhost:4200")
+@CrossOrigin (origins = "http://localhost:8081")
 @Repository
 public interface ImageRepository extends JpaRepository<Image, Long> {
 	Optional<Image> findByName(String name);
