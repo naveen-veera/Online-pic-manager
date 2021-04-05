@@ -16,7 +16,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Component
-@CrossOrigin (origins = "http://localhost:4200")
+@CrossOrigin (origins = "http://localhost:8081")
 @Table(name = "image_table")
 public class Image {
 
